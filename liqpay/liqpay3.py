@@ -40,7 +40,7 @@ class LiqPay(object):
         self._host = host
 
     def _make_signature(self, *args):
-        joined_fields = "".join(x for x in args)
+        joined_fields = "".join(args)
         joined_fields = joined_fields.encode("utf-8")
         return base64.b64encode(hashlib.sha1(joined_fields).digest()).decode("ascii")
 
